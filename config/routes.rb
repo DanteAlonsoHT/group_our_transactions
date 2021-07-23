@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root "home#index"
 
+  resources :investments
+  resources :groups
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
