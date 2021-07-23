@@ -16,7 +16,12 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= form.label :icon, "Upload an icon for the group" %>
+    <%= form.file_field :icon %>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-outline-primary" %>
   </div>
 <% end %>
