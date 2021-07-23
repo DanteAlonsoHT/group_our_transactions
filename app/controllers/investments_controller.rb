@@ -1,10 +1,14 @@
 class InvestmentsController < ApplicationController
   before_action :set_investment, only: %i[ show edit update destroy ]
-  before_action :authenticated, only: %i[ edit update destroy home show ]
+  before_action :authenticated, only: %i[ edit update destroy home show new index ]
 
 
   # GET /investments or /investments.json
   def index
+    @investments = Investment.all
+  end
+
+  def index_external
     @investments = Investment.all
   end
 
@@ -25,6 +29,7 @@ class InvestmentsController < ApplicationController
   def create
     @investment = Investment.new(investment_params)
     @investment.group_id = Group.all.where("name = ?", params["investment"]["group_id"]).select(:id).first.id
+    
     @investment.user_id = current_user.id
 
     respond_to do |format|
@@ -61,11 +66,17 @@ class InvestmentsController < ApplicationController
   end
 
   private
-  def authenticated
-    return if @current_user != nil
+  helper_method :logged_in?
 
-    flash[:alert] = 'You need to login or sign up to access'
-    redirect_to '/login'
+  def logged_in?
+    !current_user.nil?
+  end
+
+  def authenticated
+    unless self.logged_in?
+      flash[:alert] = 'You need to login or sign up to access'
+      redirect_to '/login'
+    end
   end
 
   # Use callbacks to share common setup or constraints between actions.
