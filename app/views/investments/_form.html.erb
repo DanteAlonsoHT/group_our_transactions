@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :crypto %>
-    <%= form.select :crypto, ['Bitcoin', 'Ethereum', 'XRP', 'Dogecoin'] %>
+    <%= form.label :crypto, "Select crypto:" %>
+    <%= form.select :crypto, ['Bitcoin', 'Ethereum', 'XRP', 'Dogecoin', "USD (no crypto)"] %>
   </div>
   <div class="field">
-    <%= form.label :group_id, "Select group" %>
+    <%= form.label :group_id, "Select group:" %>
     <%= form.select :group_id, Group.select(:name).map(&:name) %>
   </div>
   <div class="field">
-    <%= form.label :amount %>
+    <%= form.label :amount, "Amount:" %>
     <%= form.number_field :amount, step: :any %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-outline-primary" %>
   </div>
 <% end %>
