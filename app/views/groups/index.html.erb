@@ -1,0 +1,13 @@
+<h1>Groups#index</h1>
+<p>Find me in app/views/groups/index.html.erb</p>
+
+<%= link_to 'New', new_group_path %>
+
+<% @groups.each do |group|  %>
+
+  <h3><%= group.name %></h3>
+  
+  <%= link_to 'Show', group %> |
+  <%= link_to 'Edit', edit_group_path(group) %>
+
+<% end %>
