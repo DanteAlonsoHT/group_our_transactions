@@ -3,5 +3,5 @@ class Group < ApplicationRecord
 
   has_many :investments
 
-  has_one :image
+  has_one_attached :icon
 end
