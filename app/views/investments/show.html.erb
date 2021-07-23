@@ -1,0 +1,22 @@
+<h1>Investments#show</h1>
+<p>Find me in app/views/investments/show.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group:</strong>
+  <%= Group.where(id: @investment.group_id).select("name").first["name"] %>
+</p>
+
+<p>
+  <strong>Cryiptocurrency:</strong>
+  <%= @investment.crypto %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @investment.amount %>
+</p>
+
+<%= link_to 'Edit', edit_investment_path(@investment) %> |
+<%= link_to 'Home', root_path %>

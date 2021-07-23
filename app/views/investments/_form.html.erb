@@ -1,0 +1,30 @@
+<%= form_with(model: @investment) do |form| %>
+  <% if @investment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@investment.errors.count, "error") %> prohibited this investment from being saved:</h2>
+
+      <ul>
+        <% @investment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :crypto %>
+    <%= form.select :crypto, ['Bitcoin', 'Ethereum', 'XRP', 'Dogecoin'] %>
+  </div>
+  <div class="field">
+    <%= form.label :group_id, "Select group" %>
+    <%= form.select :group_id, Group.select(:name).map(&:name) %>
+  </div>
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount, step: :any %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

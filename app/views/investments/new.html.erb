@@ -1,0 +1,14 @@
+<h1>Investments#new</h1>
+<p>Find me in app/views/investments/new.html.erb</p>
+
+<h1>New Investment</h1>
+
+<%= link_to 'Back', investments_path %>
+
+<% if Group.count != 0 %>
+<%= render 'form', investment: @investment %>
+<% else %>
+    <p>You don't have groups!  Feel free to create a group first</p>
+    <%= link_to 'New group',new_group_path %>
+<% end %>
+
