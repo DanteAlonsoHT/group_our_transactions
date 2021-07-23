@@ -1,10 +1,8 @@
 class HomeController < ApplicationController
-  before_action :authenticated, only: %i[ index ]
+  before_action :authenticated, only: %i[index]
 
   def index
-    if Group.all.where(id: 5).first == nil
-      Group.create(id: 5, name: "No group", user_id: 1)
-    end
+    Group.create(id: 5, name: 'No group', user_id: 1) if Group.all.where(id: 5).first.nil?
   end
 
   private
@@ -16,9 +14,9 @@ class HomeController < ApplicationController
   end
 
   def authenticated
-    unless self.logged_in?
-      flash[:alert] = 'You need to login or sign up to access'
-      redirect_to '/login'
-    end
+    return if logged_in?
+
+    flash[:alert] = 'You need to login or sign up to access'
+    redirect_to '/login'
   end
 end

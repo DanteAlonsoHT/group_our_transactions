@@ -3,84 +3,94 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .card-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    min-width: 300px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 6rem 2rem;
-    border: 1px solid rgb(154, 154, 154);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  border: 1px solid rgb(154, 154, 154);
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.14);
+
+  label {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 18px;
+  }
+
+  input {
+    min-width: 250px;
+    padding: 0.25rem 1rem;
+    border: 1px solid #aaa;
     border-radius: 2rem;
-    background-color: rgba(255, 255, 255, 0.14);
-    
-    label {
-        display: block;
-        text-align: center;
-        margin: 1rem 0;
-        font-size: 18px;
-    }
+    font-size: 18px;
+  }
 
-    input {
-        min-width: 250px;
-        padding: 0.25rem 1rem;
-        border: 1px solid #aaa;
-        border-radius: 2rem;
-        font-size: 18px;
-    }
+  a {
+    margin: 1rem;
+    width: 32px;
+    width: 100%;
+    text-align: center;
+    color: #5bb;
+    text-decoration: none;
+  }
 
-    a, a:visited {
-        width: 100%;
-        text-align: center;
-        color: #5bb;
-        text-decoration: none;
-    }
+  a:visited {
+    width: 100%;
+    text-align: center;
+    color: #5bb;
+    text-decoration: none;
+  }
 
-    div {
-        display: block;
-        width: 100%;
-        text-align: center;
-
-        a, a:visited {
-            margin: 1rem;
-            width: 32px;
-        }
-    }
+  div {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .groups-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 
-    .group {
-        display: block;
-        padding: 2rem;
-        border-radius: 36px;
-        margin: 1rem;
-        text-align: center;
-        background-image: linear-gradient(120deg, #89f6fe9c 0%, #66a6ffb6 100%);
+  .group {
+    display: block;
+    padding: 2rem;
+    border-radius: 36px;
+    margin: 1rem;
+    text-align: center;
+    background-image: linear-gradient(120deg, #89f6fe9c 0%, #66a6ffb6 100%);
 
-        h3 {
-            color: #555;
-        }
-
-        a, a:visited {
-            color: #388;
-            text-decoration: none;
-        }
-
-        img {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 1rem;
-        }
+    h3 {
+      color: #555;
     }
+
+    a {
+      color: #388;
+      text-decoration: none;
+
+      :visited {
+        color: #388;
+      }
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
+    }
+  }
 }
 
-textarea:focus, input:focus, select:focus{
+textarea:focus,
+input:focus,
+select:focus {
   outline: none;
   border: 1px solid #5bb;
 }
