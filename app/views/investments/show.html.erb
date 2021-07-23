@@ -1,8 +1,6 @@
-<h1>Investments#show</h1>
-<p>Find me in app/views/investments/show.html.erb</p>
+<h1 class="my-5">Investment</h1>
 
-<p id="notice"><%= notice %></p>
-
+<div class="container-show">
 <p>
   <strong>Group:</strong>
   <%= Group.where(id: @investment.group_id).select("name").first["name"] %>
@@ -17,6 +15,8 @@
   <strong>Amount:</strong>
   <%= @investment.amount %>
 </p>
-
+<div>
 <%= link_to 'Edit', edit_investment_path(@investment) %> |
 <%= link_to 'Home', root_path %>
+</div>
+<div>

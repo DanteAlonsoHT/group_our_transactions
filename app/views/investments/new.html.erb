@@ -1,12 +1,11 @@
-<h1>Investments#new</h1>
-<p>Find me in app/views/investments/new.html.erb</p>
+<h1 class="my-5">New Investment</h1>
 
-<h1>New Investment</h1>
-
-<%= link_to 'Back', investments_path %>
+<%= link_to 'Back', investments_path, class: "btn btn-outline-primary d-block mx-auto w-50 mb-5" %>
 
 <% if Group.count != 0 %>
-<%= render 'form', investment: @investment %>
+<div class="card-form-investment">
+    <%= render 'form', investment: @investment %>
+</div>
 <% else %>
     <p>You don't have groups!  Feel free to create a group first</p>
     <%= link_to 'New group',new_group_path %>
