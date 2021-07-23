@@ -1,12 +1,13 @@
-<p id='alert'><%= alert %></p>
+<div class="card-auth">
 <h1>Login</h1>
 <%= form_tag sessions_path do |form| %>
   <div class='field'>
-    <%= label_tag :name %>
+    <%= label_tag :name, "Type your name:" %>
     <%= text_field_tag :name %>
   </div>
 
   <div class='actions'>
-    <%= submit_tag 'Login' %>
+    <%= submit_tag 'Login', class: "btn btn-outline-primary" %>
   </div>
 <% end %>
+</div>
