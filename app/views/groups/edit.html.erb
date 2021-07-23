@@ -1,0 +1,10 @@
+<h1 class="my-5">Editing Group</h1>
+
+<div class="card-group">
+    <%= render 'form', user: @group %>
+
+    <div>
+        <%= link_to 'Show', @group %> |
+        <%= link_to 'Groups', groups_path %>
+    </div>
+</div>

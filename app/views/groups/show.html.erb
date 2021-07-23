@@ -1,0 +1,32 @@
+<h1 class="my-5">Single Group</h1>
+
+<div class="container-show">
+<p>
+  <strong>Group:</strong>
+  <%= @group.name %>
+</p>
+<div class="mb-3 text-muted"> <%= @group.created_at.to_s(:long) %> </div>
+<div>
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Home', root_path %>
+</div>
+</div>
+
+<h4 class="my-5 text-muted text-center">Group investments:</h4>
+
+<div class="groups-container">
+
+<% @investments.each do |investment|  %>
+
+  <div class="card-investment">
+  <h3><%= investment.crypto %></h3>
+  <h4>$ <%= investment.amount %></h4>
+  <p>Registered by: <%= investment.user.name %> </p>
+  
+  <%= link_to 'Show', investment %>
+  <%= link_to 'Edit', edit_investment_path(investment) %>
+  </div>
+
+<% end %>
+
+</div>

@@ -1,15 +1,74 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+body {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+a:hover {
+  opacity: 50%;
+  background: transparent;
+}
+
+.navbar {
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.34);
+}
+
+.alert,
+.notice {
+  font-size: 16px;
+  padding: 1rem;
+  border-radius: 36px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.alert {
+  background-image: linear-gradient(to top, #c571f5b4 0%, #fa71ccad 100%);
+}
+
+.notice {
+  background-image: linear-gradient(to top, #0ba361b4 0%, #3cba92a3 100%);
+}
+
+.container-show {
+  background-image: linear-gradient(120deg, #89f6fe9c 0%, #66a6ffb6 100%);
+  padding: 3rem 2rem;
+  border-radius: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.container-show p {
+  font-size: 22px;
+  margin: 1.5rem 0;
+}
+
+.container-show a,
+.container-show a:visited {
+  margin: 1rem;
+  text-decoration: none;
+  color: royalblue;
+}

@@ -1,0 +1,22 @@
+<h1 class="my-5">Investment</h1>
+
+<div class="container-show">
+<p>
+  <strong>Group:</strong>
+  <%= Group.where(id: @investment.group_id).select("name").first["name"] %>
+</p>
+
+<p>
+  <strong>Cryiptocurrency:</strong>
+  <%= @investment.crypto %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @investment.amount %>
+</p>
+<div>
+<%= link_to 'Edit', edit_investment_path(@investment) %> |
+<%= link_to 'Home', root_path %>
+</div>
+<div>

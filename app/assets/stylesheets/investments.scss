@@ -1,0 +1,88 @@
+// Place all the styles related to the Investments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.link-container {
+  a {
+    display: block;
+    text-align: center;
+    margin: 0 30%;
+  }
+}
+
+.content-investments {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card-form-investment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  border: 1px solid rgb(154, 154, 154);
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.14);
+  min-width: 300px;
+  max-width: 550px;
+  margin: 0 auto;
+
+  label {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 18px;
+  }
+
+  input,
+  select {
+    min-width: 250px;
+    padding: 0.25rem 1rem;
+    border: 1px solid #aaa;
+    border-radius: 2rem;
+    font-size: 18px;
+  }
+
+  a {
+    width: 32px;
+  }
+}
+
+.card-investment {
+  background-color: rgba($color: #fff, $alpha: 0.35);
+  padding: 2rem;
+  margin: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 36px;
+  min-width: 200px;
+  text-align: center;
+
+  a,
+  a:visited {
+    text-decoration: none;
+    color: #599;
+    display: inline;
+    margin: 0;
+  }
+
+  :last-child::before {
+    content: " | ";
+    color: #599;
+    margin: 0 0.75rem;
+  }
+
+  a:hover {
+    color: #266;
+    opacity: 100%;
+  }
+
+  h3 {
+    color: #777;
+  }
+
+  h4 {
+    color: #555;
+  }
+}

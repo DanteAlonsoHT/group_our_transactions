@@ -1,0 +1,13 @@
+<h1 class="my-5">New Investment</h1>
+
+<%= link_to 'Back', investments_path, class: "btn btn-outline-primary d-block mx-auto w-50 mb-5" %>
+
+<% if Group.count != 0 %>
+<div class="card-form-investment">
+    <%= render 'form', investment: @investment %>
+</div>
+<% else %>
+    <p>You don't have groups!  Feel free to create a group first</p>
+    <%= link_to 'New group',new_group_path %>
+<% end %>
+

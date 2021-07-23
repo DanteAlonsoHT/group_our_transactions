@@ -1,0 +1,25 @@
+<h1>Groups</h1>
+
+<%= link_to 'New Group', new_group_path, class: "d-block text-center btn btn-outline-primary w-50 mx-auto my-5" %>
+
+<div class="groups-container">
+
+<% @groups.all.where("id != 5").order("created_at DESC").each do |group|  %>
+
+  <div class="group">
+
+  <% if group.icon.persisted? %>
+    <%= link_to image_tag(group.icon), groups_path %>
+  <% else %>
+    <%= link_to image_tag("default_profile.jpeg"), groups_path %>
+  <% end %>
+
+  <h3><%= group.name %></h3>
+  <p> <%= group.created_at.to_s(:long) %> </p>
+  
+  <%= link_to 'Show', group %> |
+  <%= link_to 'Edit', edit_group_path(group) %>
+  </div>
+<% end %>
+
+</div>

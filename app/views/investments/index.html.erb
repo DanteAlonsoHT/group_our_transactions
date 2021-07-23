@@ -1,0 +1,20 @@
+<h1 class="my-5">Investments</h1>
+
+<div class="link-container">
+<%= link_to 'New investment', new_investment_path, class: "btn btn-outline-primary" %>
+<div>
+
+<div class="content-investments">
+<% @investments.where("user_id = ? AND group_id != 5", current_user.id).order("created_at DESC").each do |investment|  %>
+
+  <div class="card-investment">
+  <h3><%= investment.crypto %></h3>
+  <h4>$ <%= investment.amount %></h4>
+  <p>Registered by: <%= investment.user.name %> </p>
+  
+  <%= link_to 'Show', investment %>
+  <%= link_to 'Edit', edit_investment_path(investment) %>
+  </div>
+
+<% end %>
+</div>
