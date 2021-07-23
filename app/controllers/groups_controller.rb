@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[ show edit update destroy ]
-  before_action :authenticated, only: %i[ edit update destroy home show ]
+  before_action :authenticated, only: %i[edit update show destory new index ]
 
 
 
@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
+    @investments = Investment.all.where("user_id = ? AND group_id = ?", current_user.id, @group.id)
   end
 
   # GET /groups/new
@@ -61,11 +62,17 @@ class GroupsController < ApplicationController
   end
 
   private
-  def authenticated
-    return if @current_user != nil
+  helper_method :logged_in?
 
-    flash[:alert] = 'You need to login or sign up to access'
-    redirect_to '/login'
+  def logged_in?
+    !current_user.nil?
+  end
+
+  def authenticated
+    unless self.logged_in?
+      flash[:alert] = 'You need to login or sign up to access'
+      redirect_to '/login'
+    end
   end
 
   # Use callbacks to share common setup or constraints between actions.
@@ -75,6 +82,6 @@ class GroupsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def group_params
-    params.require(:group).permit(:name, :user_id)
+    params.require(:group).permit(:name, :user_id, :icon)
   end
 end
