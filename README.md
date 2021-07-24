@@ -3,10 +3,10 @@
 
 
 In this project, I've been working on making an app to register
-financial investments with cryptos and no crytos, you can generate
+financial investments with cryptos and no cryptos, you can generate
 different portfolios to group your investments according to your requirements, also you can support someone's portfolio, but it only if you and your partners want to do that.
 
-This project was created according to the requierements by client to generate a rails app Minimum Viable Product MVP, feel free to give me your feedback and feel free to use it if you want to do it as well.
+This project was created according to the requirements of the client to generate a rails app Minimum Viable Product MVP, feel free to give me your feedback and feel free to use it if you want to do it as well.
 
 ### Disclamer ⚠
 
@@ -50,7 +50,7 @@ Follow the steps below to get a local copy running:
 ### Install
 - To run this project on the local computer, you need to install Ruby on Rails.
     - For Windows users, visit [Ruby Installer](https://rubyinstaller.org/)
-    - For MacOS and Linux users, visit the [Ruby Official Site](https://www.ruby-lang.org/en/downloads/) for instructions.
+    - For macOS and Linux users, visit the [Ruby Official Site](https://www.ruby-lang.org/en/downloads/) for instructions.
 - Then clone the project by typing `git clone https://github.com/DanteAlonsoHT/group_our_transactions.git`.
 
 ### Run App
@@ -71,7 +71,7 @@ Type in the terminal `rails webpacker:install` in the root directory of the proj
 
 ### Test App
 
-You can test this app using the next comand in your terminal.
+You can test this app using the next command in your terminal.
 
 `bundle exec rspec`
 
@@ -95,7 +95,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used 🔰
+- Hat tip to anyone who's code was used 🔰
 - Inspiration 💘
 - Microverse program ⚡
 - My standup team 🏹
@@ -104,4 +104,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
-
