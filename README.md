@@ -38,6 +38,8 @@ In this app, you can't enter your real money, it's just a base to register your 
 
 [Live Demo Link](Not yet)
 
+Feel free to login with my account: "Dante Alonso"
+
 ## Linters
 
 - Rubocop
