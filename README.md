@@ -1,5 +1,5 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-# Group by Transactions Software Project
+# Crypto Portfolios - Group by Transactions Software Project RoR (Ruby on Rails)
 
 
 In this project, I've been working on making an app to register
