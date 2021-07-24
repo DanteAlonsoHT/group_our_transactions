@@ -14,15 +14,15 @@ In this app, you can't enter your real money, it's just a base to register your 
 
 ## Screenshots
 
-<img src="lib\assets\group-transactions-login.PNG" width="45%">
+<img src="lib\assets\group-transactions-login.PNG" width="41%">
 
-<img src="lib\assets\group-transactions-profile.PNG" width="44%">
+<img src="lib\assets\group-transactions-profile.PNG" width="40%">
 
-<img src="lib\assets\group-transactions-investments.PNG" width="45%">
+<img src="lib\assets\group-transactions-investments.PNG" width="40%">
 
-<img src="lib\assets\group-transactions-groups.PNG" width="43.5%">
+<img src="lib\assets\group-transactions-groups.PNG" width="39%">
 
-<img src="lib\assets\group-transactions-show-group.PNG" width="45%">
+<img src="lib\assets\group-transactions-show-group.PNG" width="40%">
 
 
 ## Built with 🔨
