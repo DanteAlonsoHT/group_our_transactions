@@ -4,7 +4,7 @@
   <% if current_user.avatar.persisted? %>
     <%= link_to image_tag(current_user.avatar), root_path %>
   <% else %>
-    <%= link_to image_tag("default_profile.jpeg"), root_path %>
+    <%= link_to image_tag("http://a4.mzstatic.com/us/r1000/046/Purple/bd/8f/fd/mzl.emkswtfe.jpg"), root_path %>
   <% end %>
 
   <p class="fs-5 my-3">Hi <%= current_user.name %>!</p>
