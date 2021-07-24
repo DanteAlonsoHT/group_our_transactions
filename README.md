@@ -13,16 +13,16 @@ This project was created according to the requirements of the client to generate
 In this app, you can't enter your real money, it's just a base to register your own portfolio, according to your financial investments in cryptos, or external financial resources.
 
 ## Screenshots
+<div style="display: flex;">
+    <img src="lib\assets\group-transactions-login.PNG" width="45%">
+    <img src="lib\assets\group-transactions-profile.PNG" width="45%">
+</div>
+<div style="display: flex;">
+    <img src="lib\assets\group-transactions-investments.PNG" width="45%">
+    <img src="lib\assets\group-transactions-groups.PNG" width="45%">
+</div>
 
-<img src="lib\assets\group-transactions-login.PNG" width="41%">
-
-<img src="lib\assets\group-transactions-profile.PNG" width="40%">
-
-<img src="lib\assets\group-transactions-investments.PNG" width="40%">
-
-<img src="lib\assets\group-transactions-groups.PNG" width="39%">
-
-<img src="lib\assets\group-transactions-show-group.PNG" width="40%">
+<img src="lib\assets\group-transactions-show-group.PNG" width="45%" style="display: block; margin: 0 auto;">
 
 
 ## Built with 🔨
