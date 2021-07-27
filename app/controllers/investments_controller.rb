@@ -11,6 +11,10 @@ class InvestmentsController < ApplicationController
     @investments = Investment.all
   end
 
+  def index_all
+    @investments = Investment.all
+  end
+
   # GET /investments/1 or /investments/1.json
   def show; end
 
