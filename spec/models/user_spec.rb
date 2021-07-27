@@ -24,4 +24,4 @@ RSpec.describe User, type: :model do
    it "Username too long" do
     expect(long_user.valid?).to eq(false)
    end
-nd
+end
