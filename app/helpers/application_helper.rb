@@ -22,7 +22,7 @@ module ApplicationHelper
     @total_amount = calculate_money(user, 'Bitcoin', 35_000, '!=') + calculate_money(user, 'Ethereum', 2027, '!=') +
                     calculate_money(user, 'XRP', 0.64, '!=') + calculate_money(user, 'Dogecoin', 0.61, '!=') +
                     calculate_money(user, 'USD (no crypto)', 1, '!=')
-    (@total_amount).round(2)
+    @total_amount.round(2)
   end
 
   def total_amount_external(user)
@@ -30,7 +30,7 @@ module ApplicationHelper
     @total_amount = calculate_money(user, 'Bitcoin', 35_000, '=') + calculate_money(user, 'Ethereum', 2027, '=') +
                     calculate_money(user, 'XRP', 0.64, '=') + calculate_money(user, 'Dogecoin', 0.61, '=') +
                     calculate_money(user, 'USD (no crypto)', 1, '=')
-    (@total_amount).round(2)
+    @total_amount.round(2)
   end
 
   def total_amount_all
@@ -38,6 +38,6 @@ module ApplicationHelper
     @total_amount = calculate_all_money('Bitcoin', 35_000) + calculate_all_money('Ethereum', 2027) +
                     calculate_all_money('XRP', 0.64) + calculate_all_money('Dogecoin', 0.61) +
                     calculate_all_money('USD (no crypto)', 1)
-    (@total_amount).round(2)
+    @total_amount.round(2)
   end
 end
