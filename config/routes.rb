@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'investments-ext', to: 'investments#index_external', as: 'external_investments'
+  get 'investments-all', to: 'investments#index_all', as: 'all_investments'
 end
