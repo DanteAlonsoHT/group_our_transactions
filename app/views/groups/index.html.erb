@@ -1,6 +1,6 @@
 <h1>Groups</h1>
 
-<%= link_to 'New Group', new_group_path, class: "d-block text-center btn btn-outline-primary w-50 mx-auto my-5" %>
+<%= link_to 'New Group', new_group_path, class: "d-block text-center btn2 btn-outline-green w-50 mx-auto my-5" %>
 
 <div class="groups-container">
 
@@ -8,11 +8,7 @@
 
   <div class="group">
 
-  <% if group.icon.persisted? %>
-    <%= link_to image_tag(group.icon), groups_path %>
-  <% else %>
-    <%= link_to image_tag("http://a4.mzstatic.com/us/r1000/046/Purple/bd/8f/fd/mzl.emkswtfe.jpg"), groups_path %>
-  <% end %>
+  <%= check_image_by_group_id(group.id) %>
 
   <h3><%= group.name %></h3>
   <p> <%= group.created_at.to_s(:long) %> </p>

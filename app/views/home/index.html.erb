@@ -15,16 +15,19 @@
   <div>
     <ul class="links-card">
         <li class="nav-item">
-          <%= link_to 'All my portfolio', investments_path, class: "nav-link" %>
+          <%= link_to 'All my portfolio', investments_path, class: "nav-link link-home" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'All my external investments', external_investments_path, class: "nav-link" %>
+          <%= link_to 'All my external investments', external_investments_path, class: "nav-link link-home" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'All portfolios', groups_path, class: "nav-link" %>
+          <%= link_to 'All portfolios', groups_path, class: "nav-link link-home" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Log out', logout_path, class: "nav-link" %>
+          <%= link_to 'All investments', all_investments_path, class: "nav-link link-home" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Log out', logout_path, class: "nav-link link-home" %>
         </li>
       </ul>
   </div>

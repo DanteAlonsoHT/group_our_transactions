@@ -1,13 +1,17 @@
 <h1 class="my-5">Investments</h1>
 
+<h2 class="text-center text-muted mb-5">Total USD in investments: <%= total_amount_internal(current_user)%> USD</h2>
+
 <div class="link-container">
-<%= link_to 'New investment', new_investment_path, class: "btn btn-outline-primary" %>
+<%= link_to 'New investment', new_investment_path, class: "btn2 btn-outline-green" %>
 <div>
 
 <div class="content-investments">
 <% @investments.where("user_id = ? AND group_id != 5", current_user.id).order("created_at DESC").each do |investment|  %>
 
   <div class="card-investment">
+  <%= check_image_by_group_id(investment.group_id) %>
+
   <h3><%= investment.crypto %></h3>
   <h4>$ <%= investment.amount %></h4>
   <p>Registered by: <%= investment.user.name %> </p>
