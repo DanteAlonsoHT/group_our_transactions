@@ -25,9 +25,8 @@
 }
 
 .proxima_light_font {
-  font-family: ProximaNovaCondensedLight;
+  font-family: ProximaNovaCondensedLight, sans-serif;
 }
-
 
 body {
   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
@@ -35,8 +34,13 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: ProximaNovaBold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: ProximaNovaBold, sans-serif;
 }
 
 a:hover {
@@ -49,7 +53,8 @@ a:hover {
   background-color: #3778c2;
 }
 
-.navbar a, .navbar-toggler {
+.navbar a,
+.navbar-toggler {
   color: #fff;
   z-index: 5;
 }
@@ -101,25 +106,25 @@ a:hover {
 .container-show a:visited {
   margin: 1rem;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.748);;
+  color: rgba(255, 255, 255, 0.748);
 }
 
 .btn2 {
-display: inline-block;
-font-weight: 400;
-line-height: 1.5;
-text-align: center;
-text-decoration: none;
-vertical-align: middle;
-cursor: pointer;
--webkit-user-select: none;
--moz-user-select: none;
-user-select: none;
-background-color: transparent;
-padding: .5rem;
-font-size: 1rem;
-border-radius: .25rem;
-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .btn-outline-green {
