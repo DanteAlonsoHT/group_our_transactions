@@ -5,7 +5,7 @@
   <strong>Group:</strong>
   <%= @group.name %>
 </p>
-<div class="mb-3 text-muted"> <%= @group.created_at.to_s(:long) %> </div>
+<div class="mb-3 text-light"> <%= @group.created_at.to_s(:long) %> </div>
 <div>
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Home', root_path %>
