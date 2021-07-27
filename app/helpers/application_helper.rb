@@ -1,118 +1,43 @@
 module ApplicationHelper
-    def total_amount_internal(user)
-        @total_amount = 0
-        @all_bitcoin = Investment.all.where("user_id = ? and crypto = ? and group_id != 5", user.id,"Bitcoin")
-        unless @all_bitcoin.nil?
-            @all_bitcoin.each do |bitcoin|
-                @total_amount = @total_amount + bitcoin.amount*35000
-            end
-        end
-
-        @all_ethereum = Investment.all.where("user_id = ? and crypto = ? and group_id != 5", user.id,"Ethereum")
-        unless @all_ethereum.nil?
-            @all_ethereum.each do |ethereum|
-                @total_amount = @total_amount + ethereum.amount*2027
-            end
-        end
-
-        @all_xrp = Investment.all.where("user_id = ? and crypto = ? and group_id != 5", user.id,"XRP")
-        unless @all_xrp.nil?
-            @all_xrp.each do |xrp|
-                @total_amount = @total_amount + xrp.amount*0.64
-            end
-        end
-
-        @all_dogecoin = Investment.all.where("user_id = ? and crypto = ? and group_id != 5", user.id,"Dogecoin")
-        unless @all_dogecoin.nil?
-            @all_dogecoin.each do |dogecoin|
-                @total_amount = @total_amount + dogecoin.amount*0.61
-            end
-        end
-
-        @all_usd = Investment.all.where("user_id = ? and crypto = ? and group_id != 5", user.id,"USD (no crypto)")
-        unless @all_usd.nil?
-            @all_usd.each do |usd|
-                @total_amount = @total_amount + usd.amount
-            end
-        end
-        (@total_amount).round(2)
+  def calculate_money(investor, money_str, money_price_today, comparador)
+    total_amount = 0
+    all_money = Investment.all.where("user_id = ? and crypto = ? and group_id #{comparador} 5", investor.id, money_str)
+    all_money&.each do |money|
+      total_amount += money.amount * money_price_today
     end
+    total_amount
+  end
 
-    def total_amount_external(user)
-        @total_amount = 0
-        @all_bitcoin = Investment.all.where("user_id = ? and crypto = ? and group_id = 5", user.id,"Bitcoin")
-        unless @all_bitcoin.nil?
-            @all_bitcoin.each do |bitcoin|
-                @total_amount = @total_amount + bitcoin.amount*35000
-            end
-        end
-
-        @all_ethereum = Investment.all.where("user_id = ? and crypto = ? and group_id = 5", user.id,"Ethereum")
-        unless @all_ethereum.nil?
-            @all_ethereum.each do |ethereum|
-                @total_amount = @total_amount + ethereum.amount*2027
-            end
-        end
-
-        @all_xrp = Investment.all.where("user_id = ? and crypto = ? and group_id = 5", user.id,"XRP")
-        unless @all_xrp.nil?
-            @all_xrp.each do |xrp|
-                @total_amount = @total_amount + xrp.amount*0.64
-            end
-        end
-
-        @all_dogecoin = Investment.all.where("user_id = ? and crypto = ? and group_id = 5", user.id,"Dogecoin")
-        unless @all_dogecoin.nil?
-            @all_dogecoin.each do |dogecoin|
-                @total_amount = @total_amount + dogecoin.amount*0.61
-            end
-        end
-
-        @all_usd = Investment.all.where("user_id = ? and crypto = ? and group_id = 5", user.id,"USD (no crypto)")
-        unless @all_usd.nil?
-            @all_usd.each do |usd|
-                @total_amount = @total_amount + usd.amount
-            end
-        end
-        (@total_amount).round(2)
+  def calculate_all_money(money_str, money_price_today)
+    total_amount = 0
+    all_money = Investment.all.where('crypto = ?', money_str)
+    all_money&.each do |money|
+      total_amount += money.amount * money_price_today
     end
+    total_amount
+  end
 
-    def total_amount_all
-        @total_amount = 0
-        @all_bitcoin = Investment.all.where("crypto = ?","Bitcoin")
-        unless @all_bitcoin.nil?
-            @all_bitcoin.each do |bitcoin|
-                @total_amount = @total_amount + bitcoin.amount*35000
-            end
-        end
+  def total_amount_internal(user)
+    @total_amount = 0
+    @total_amount = calculate_money(user, 'Bitcoin', 35_000, '!=') + calculate_money(user, 'Ethereum', 2027, '!=') +
+                    calculate_money(user, 'XRP', 0.64, '!=') + calculate_money(user, 'Dogecoin', 0.61, '!=') +
+                    calculate_money(user, 'USD (no crypto)', 1, '!=')
+    (@total_amount).round(2)
+  end
 
-        @all_ethereum = Investment.all.where("crypto = ?","Ethereum")
-        unless @all_ethereum.nil?
-            @all_ethereum.each do |ethereum|
-                @total_amount = @total_amount + ethereum.amount*2027
-            end
-        end
+  def total_amount_external(user)
+    @total_amount = 0
+    @total_amount = calculate_money(user, 'Bitcoin', 35_000, '=') + calculate_money(user, 'Ethereum', 2027, '=') +
+                    calculate_money(user, 'XRP', 0.64, '=') + calculate_money(user, 'Dogecoin', 0.61, '=') +
+                    calculate_money(user, 'USD (no crypto)', 1, '=')
+    (@total_amount).round(2)
+  end
 
-        @all_xrp = Investment.all.where("crypto = ?","XRP")
-        unless @all_xrp.nil?
-            @all_xrp.each do |xrp|
-                @total_amount = @total_amount + xrp.amount*0.64
-            end
-        end
-
-        @all_dogecoin = Investment.all.where("crypto = ?","Dogecoin")
-        unless @all_dogecoin.nil?
-            @all_dogecoin.each do |dogecoin|
-                @total_amount = @total_amount + dogecoin.amount*0.61
-            end
-        end
-
-        @all_usd = Investment.all.where("crypto = ?","USD (no crypto)")
-        unless @all_usd.nil?
-            @all_usd.each do |usd|
-                @total_amount = @total_amount + usd.amount
-            end
-        end
-        (@total_amount).round(2)
-    end
+  def total_amount_all
+    @total_amount = 0
+    @total_amount = calculate_all_money('Bitcoin', 35_000) + calculate_all_money('Ethereum', 2027) +
+                    calculate_all_money('XRP', 0.64) + calculate_all_money('Dogecoin', 0.61) +
+                    calculate_all_money('USD (no crypto)', 1)
+    (@total_amount).round(2)
+  end
 end
