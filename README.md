@@ -97,6 +97,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- Part of the design og this project was inspired by [Gregorie Vella](https://www.behance.net/gregoirevella)
 - Hat tip to anyone who's code was used 🔰
 - Inspiration 💘
 - Microverse program ⚡
