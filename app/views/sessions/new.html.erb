@@ -1,13 +1,15 @@
 <div class="card-auth">
-<h1>Login</h1>
+<h1 class="my-5">Login</h1>
 <%= form_tag sessions_path do |form| %>
   <div class='field'>
-    <%= label_tag :name, "Type your name:" %>
-    <%= text_field_tag :name %>
+    <%= text_field_tag :name, {},  {class: "form-control fs-4 text-muted text-center", placeholder: "Type your name"} %>
   </div>
 
-  <div class='actions'>
-    <%= submit_tag 'Login', class: "btn2 btn-outline-green" %>
-  </div>
+  <div class="link-container position-relative">
+    <div class="btn2 btn-outline-green actions d-fixed position-fixed bottom-0 start-50 
+          translate-middle-x w-100">
+      <%= submit_tag 'Login', class: "btn2 btn-outline-green w-100 border border-white" %>
+      </div>
+  <div>
 <% end %>
 </div>

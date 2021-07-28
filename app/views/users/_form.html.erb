@@ -12,16 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :avatar, "Upload your image profile" %>
-    <%= form.file_field :avatar %>
+    <%= form.label :avatar, "Upload image profile", class: "form-label d-block text-center text-muted fs-4" %>
+    <%= form.file_field :avatar, class: "form-control fs-5 text-muted" %>
   </div>
 
   <div class="field">
-    <%= form.label :name, "Type your name:" %>
-    <%= form.text_field :name, class: "value-input" %>
+    <%= form.text_field :name, class: "value-input", 
+    class: "form-control fs-4 text-muted text-center", placeholder: "Type your name" %>
   </div>
 
-  <div class="field">
-    <%= form.submit class: "actions btn2 btn-outline-green" %>
-  </div>
+  <div class="link-container position-relative">
+    <div class="btn2 btn-outline-green field d-fixed position-fixed bottom-0 start-50 
+          translate-middle-x w-100">
+      <%= form.submit class: "btn2 btn-outline-green w-100 border border-white" %>
+      </div>
+  <div>
 <% end %>

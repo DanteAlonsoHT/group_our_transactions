@@ -1,19 +1,18 @@
 <div class="container-md">
-  <h1>User Profile</h1>
-
-  <% if current_user.avatar.persisted? %>
-    <%= link_to image_tag(current_user.avatar), root_path %>
-  <% else %>
-    <%= link_to image_tag("http://a4.mzstatic.com/us/r1000/046/Purple/bd/8f/fd/mzl.emkswtfe.jpg"), root_path %>
-  <% end %>
-
-  <p class="fs-5 my-3">Hi <%= current_user.name %>!</p>
-
-  <%= link_to "Edit profile", edit_user_path(current_user), class: "d-block text-center" %>
-
+  <h1 class="my-3">User Profile</h1>
 
   <div>
     <ul class="links-card">
+        <% if current_user.avatar.persisted? %>
+          <%= link_to image_tag(current_user.avatar, style: "height:164px;width:164px;"), root_path %>
+        <% else %>
+          <%= link_to image_tag("http://a4.mzstatic.com/us/r1000/046/Purple/bd/8f/fd/mzl.emkswtfe.jpg",
+          style: "height:164px;width:164px;"), root_path %>
+        <% end %>
+        <div class="mb-5 text-light text-center">
+          <h2 class="fs-5 my-3">Hi <%= current_user.name %>!</h2>
+          <%= link_to "Edit profile", edit_user_path(current_user), class: "d-block text-decoration-none" %>
+        </div>
         <li class="nav-item">
           <%= link_to 'All my portfolio', investments_path, class: "nav-link link-home" %>
         </li>

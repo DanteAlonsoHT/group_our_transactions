@@ -12,19 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :crypto, "Select crypto:" %>
-    <%= form.select :crypto, ['Bitcoin', 'Ethereum', 'XRP', 'Dogecoin', "USD (no crypto)"] %>
+    <%= form.label :crypto, "Select crypto:", class: "form-label" %>
+    <%= form.select :crypto, ['Bitcoin', 'Ethereum', 'XRP', 'Dogecoin', "USD (no crypto)"],
+        {}, {class: "form-select form-select-lg mb-3"}  %>
   </div>
+  <hr>
   <div class="field">
-    <%= form.label :group_id, "Select group:" %>
-    <%= form.select :group_id, Group.select(:name).map(&:name) %>
+    <%= form.label :group_id, "Select group:", class: "form-label" %>
+    <%= form.select :group_id, Group.select(:name).map(&:name),
+        {}, {class: "form-select form-select-lg mb-3"}  %>
   </div>
+  <hr>
   <div class="field">
-    <%= form.label :amount, "Amount:" %>
-    <%= form.number_field :amount, step: :any %>
+    <%= form.label :amount, "Amount:", class: "form-label" %>
+    <%= form.number_field :amount, step: :any, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit class: "btn2 btn-outline-green" %>
-  </div>
+  <div class="link-container position-relative">
+    <div class="btn2 btn-outline-green actions d-fixed position-fixed bottom-0 start-50 
+          translate-middle-x w-100">
+      <%= form.submit class: "btn2 btn-outline-green w-100 border border-white" %>
+      </div>
+  <div>
 <% end %>
