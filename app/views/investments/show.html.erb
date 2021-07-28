@@ -17,7 +17,12 @@
     <strong class="fs-3 ms-2"><%= @investment.amount %></strong>
   </div>
   <% if current_user.id == @investment.user_id  %>
-    <%= link_to 'Edit', edit_investment_path(@investment), 
-    class: "text-muted font-light text-decoration-none text-center d-block mt-3" %>
+    <div class="link-container position-relative">
+      <div class="btn2 btn-outline-green d-fixed position-fixed bottom-0 start-50 
+            translate-middle-x w-100">
+        <%= link_to 'Edit Investment', edit_investment_path(@investment), 
+            class: "btn2 btn-outline-green w-100 border border-white" %>
+        </div>
+    <div>
   <% end %>
 </div>
