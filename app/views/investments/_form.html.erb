@@ -1,4 +1,4 @@
-<%= form_with(model: @investment) do |form| %>
+<%= form_with(model: @investment, class: "w-100") do |form| %>
   <% if @investment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@investment.errors.count, "error") %> prohibited this investment from being saved:</h2>

@@ -1,5 +1,6 @@
 <div class="card-auth">
 <h1 class="my-5">Login</h1>
+<div class="p-5 bg-white">
 <%= form_tag sessions_path do |form| %>
   <div class='field'>
     <%= text_field_tag :name, {},  {class: "form-control fs-4 text-muted text-center", placeholder: "Type your name"} %>
@@ -12,4 +13,5 @@
       </div>
   <div>
 <% end %>
+<div>
 </div>
