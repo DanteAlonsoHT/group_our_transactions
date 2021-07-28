@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'Home', type: :system do
-  before(:each) do 
-    User.create(name: 'User1') 
+  before(:each) do
+    User.create(name: 'User1')
   end
 
-  describe "Login is required" do
-    it "Login is required" do
+  describe 'Login is required' do
+    it 'Login is required' do
       visit root_path
-      expect(page).to have_content('Login') 
+      expect(page).to have_content('Login')
     end
   end
 
@@ -42,7 +42,7 @@ RSpec.describe 'Home', type: :system do
     visit root_path
     fill_in 'Type your name', with: 'User1'
     click_button 'Login'
-    click_link("Log out", :match => :first)
+    click_link('Log out', match: :first)
     expect(page).to have_content('Logged out!')
   end
 end
