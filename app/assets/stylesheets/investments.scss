@@ -6,7 +6,7 @@
   a {
     display: block;
     text-align: center;
-    margin: 0 30%;
+    color: #fff;
   }
 }
 
@@ -51,12 +51,11 @@
 }
 
 .card-investment {
-  background-color: rgba($color: #fff, $alpha: 0.35);
+  background-color: #fff;
   padding: 2rem;
   margin: 1rem;
-  border: 1px solid #aaa;
-  border-radius: 36px;
   min-width: 200px;
+  width: 80%;
   text-align: center;
 
   a,
@@ -67,15 +66,8 @@
     margin: 0;
   }
 
-  :last-child::before {
-    content: " | ";
-    color: #599;
-    margin: 0 0.75rem;
-  }
-
   a:hover {
-    color: #266;
-    opacity: 100%;
+    opacity: 80%;
   }
 
   h3 {
