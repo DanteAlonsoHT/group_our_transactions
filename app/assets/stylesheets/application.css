@@ -1,15 +1,138 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+@font-face {
+  font-family: ProximaNovaBold;
+  src: url(fonts/ProximaNovaBold.otf);
+}
+
+@font-face {
+  font-family: ProximaNovaCondensedLight;
+  src: url(fonts/ProximaNovaCondensedLight.otf);
+}
+
+.proxima_light_font {
+  font-family: ProximaNovaCondensedLight, sans-serif;
+}
+
+.body {
+  min-height: 110vh;
+  background-color: #eee;
+}
+
+.font-bold {
+  font-family: ProximaNovaBold, sans-serif;
+}
+
+.font-light {
+  font-family: ProximaNovaCondensedLight, sans-serif;
+}
+
+.max-560 {
+  max-width: 560px;
+}
+
+.gray_text_high {
+  color: #434b54;
+}
+
+.gray_text_medium {
+  color: #939393;
+}
+
+.gray_text_low {
+  color: #bdbdbd;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: ProximaNovaBold, sans-serif;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.469);
+}
+
+.navbar {
+  background-color: #3778c2;
+}
+
+.navbar a,
+.navbar-toggler {
+  color: #fff;
+  z-index: 5;
+}
+
+.navbar-toggler-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.alert,
+.notice {
+  font-size: 16px;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.alert {
+  background-image: linear-gradient(to top, #d11051b4 0%, #c22626ad 100%);
+}
+
+.notice {
+  background-image: linear-gradient(to top, #5fb523 0%, #5fb523 100%);
+}
+
+.btn2 {
+  display: block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: #fff;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-outline-green {
+  color: #fff;
+  border-color: #fff;
+  background-color: #5fb523;
+}
+
+.btn-outline-green a,
+.btn-outline-green a:visited {
+  color: #fff;
+}
+
+.btn-outline-green a:hover {
+  color: #fff;
+  border-color: #fff;
+  background-color: #60b523b6;
+}

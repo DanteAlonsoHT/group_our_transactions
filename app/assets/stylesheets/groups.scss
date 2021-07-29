@@ -1,0 +1,97 @@
+// Place all the styles related to the Groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  border: 1px solid rgb(154, 154, 154);
+  border-radius: 2rem;
+  background-color: rgba(181, 173, 173, 0.14);
+
+  label {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 18px;
+  }
+
+  input {
+    min-width: 250px;
+    padding: 0.25rem 1rem;
+    border: 1px solid #aaa;
+    border-radius: 2rem;
+    font-size: 18px;
+  }
+
+  a {
+    margin: 1rem;
+    width: 32px;
+    width: 100%;
+    text-align: center;
+    color: #5bb;
+    text-decoration: none;
+  }
+
+  a:visited {
+    width: 100%;
+    text-align: center;
+    color: #3778c2;
+    text-decoration: none;
+  }
+
+  div {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.groups-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .group {
+    display: block;
+    padding: 2rem;
+    border-radius: 36px;
+    margin: 1rem;
+    text-align: center;
+    background-image: linear-gradient(120deg, #3778c2a1 0%, #3778c2 100%);
+
+    h3,
+    p {
+      color: rgba(255, 255, 255, 0.796);
+    }
+
+    a {
+      color: rgb(177, 208, 208);
+      text-decoration: none;
+
+      :visited {
+        color: #388;
+      }
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+  border: 1px solid #5bb;
+}
