@@ -1,20 +1,41 @@
-<h1 class="my-5">Investments</h1>
+<div class="d-flex flex-wrap justify-content-between text-muted p-3 bg-white">
+    <strong class="my-auto">Total USD invested:</strong>
+    <h3 class="fs-3 ms-2"><%= total_amount_internal(current_user)%> USD</h3>
+</div>
 
-<div class="link-container">
-<%= link_to 'New investment', new_investment_path, class: "btn btn-outline-primary" %>
+<div class="link-container position-relative">
+  <div class="btn2 btn-outline-green d-fixed position-fixed bottom-0 start-50 
+        translate-middle-x w-100">
+    <%= link_to 'New Investment', new_investment_path, 
+        class: "btn2 btn-outline-green w-100 border border-white" %>
+    </div>
 <div>
 
-<div class="content-investments">
+<div class="d-flex flex-wrap">
 <% @investments.where("user_id = ? AND group_id != 5", current_user.id).order("created_at DESC").each do |investment|  %>
 
-  <div class="card-investment">
-  <h3><%= investment.crypto %></h3>
-  <h4>$ <%= investment.amount %></h4>
-  <p>Registered by: <%= investment.user.name %> </p>
-  
-  <%= link_to 'Show', investment %>
-  <%= link_to 'Edit', edit_investment_path(investment) %>
+<div class="mx-auto m-3 card-show bg-white p-3 gray_text_medium font-bold max-560">
+  <div class="d-flex">
+    <%= check_image_by_group_id(investment.group_id) %>
+    <div class="fs-6 d-flex align-items-center mx-2">
+      <strong>Group:
+        <%= Group.where(id: investment.group_id).select("name").first["name"] %>
+      </strong>
+    </div>
   </div>
+  <hr>
+  <strong class="my-2 d-block fs-6">Money unit: <%= investment.crypto %></strong>
+  <span class="gray_text_low font-light"> <%= investment.created_at.to_s(:long) %> </span>
+  <hr>
+  <div class="d-flex flex-wrap justify-content-between">
+    <h6 class="my-auto">TOTAL AMOUNT:</h6>
+    <strong class="fs-3 ms-2"><%= investment.amount %></strong>
+  </div>
+  <div class="d-flex justify-content-center mt-3">
+    <%= link_to 'Edit', edit_investment_path(investment), class: "text-muted font-light text-decoration-none mx-2" %> |
+    <%= link_to 'Show', investment, class: "text-muted font-light text-decoration-none mx-2" %>
+  </div>
+</div>
 
 <% end %>
 </div>

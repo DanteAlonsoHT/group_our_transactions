@@ -1,22 +1,28 @@
-<h1 class="my-5">Investment</h1>
-
-<div class="container-show">
-<p>
-  <strong>Group:</strong>
-  <%= Group.where(id: @investment.group_id).select("name").first["name"] %>
-</p>
-
-<p>
-  <strong>Cryiptocurrency:</strong>
-  <%= @investment.crypto %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  <%= @investment.amount %>
-</p>
-<div>
-<%= link_to 'Edit', edit_investment_path(@investment) %> |
-<%= link_to 'Home', root_path %>
+<h1 class="my-5">Details</h1>
+<div class="card-show bg-white p-3 gray_text_medium font-bold max-560 mx-auto">
+  <div class="d-flex">
+    <%= check_image_by_group_id(@investment.group_id) %>
+    <div class="fs-6 d-flex align-items-center mx-2">
+      <strong>Group:
+        <%= Group.where(id: @investment.group_id).select("name").first["name"] %>
+      </strong>
+    </div>
+  </div>
+  <hr>
+  <strong class="my-2 d-block fs-6">Money unit: <%= @investment.crypto %></strong>
+  <span class="gray_text_low font-light"> <%= @investment.created_at.to_s(:long) %> </span>
+  <hr>
+  <div class="d-flex flex-wrap justify-content-between">
+    <h6 class="my-auto">TOTAL AMOUNT:</h6>
+    <strong class="fs-3 ms-2"><%= @investment.amount %></strong>
+  </div>
+  <% if current_user.id == @investment.user_id  %>
+    <div class="link-container position-relative">
+      <div class="btn2 btn-outline-green d-fixed position-fixed bottom-0 start-50 
+            translate-middle-x w-100">
+        <%= link_to 'Edit Investment', edit_investment_path(@investment), 
+            class: "btn2 btn-outline-green w-100 border border-white" %>
+        </div>
+    <div>
+  <% end %>
 </div>
-<div>

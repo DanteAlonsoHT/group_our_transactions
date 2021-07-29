@@ -1,6 +1,6 @@
 <div class="d-flex flex-wrap justify-content-between text-muted p-3 bg-white">
     <strong class="my-auto">Total USD invested:</strong>
-    <h3 class="fs-3 ms-2"><%= total_amount_external(current_user)%> USD</h3>
+    <h3 class="fs-3 ms-2"><%= total_amount_all %> USD</h3>
 </div>
 
 <div class="link-container position-relative">
@@ -11,14 +11,14 @@
     </div>
 <div>
 
-<div class="d-flex flex-wrap">
-<% @investments.where("user_id = ? AND group_id = 5", current_user.id).order("created_at DESC").each do |investment|  %>
+<div class="content-investments">
+<% @investments.order("created_at DESC").each do |investment|  %>
 
 <div class="m-3 card-show bg-white p-3 gray_text_medium font-bold max-560 mx-auto">
   <div class="d-flex">
     <%= check_image_by_group_id(investment.group_id) %>
     <div class="fs-6 d-flex align-items-center mx-2">
-      <strong>External - No Group</strong>
+      <strong>Investment</strong>
     </div>
   </div>
   <hr>
@@ -28,10 +28,6 @@
   <div class="d-flex flex-wrap justify-content-between">
     <h6 class="my-auto">TOTAL AMOUNT:</h6>
     <strong class="fs-3 ms-2"><%= investment.amount %></strong>
-  </div>
-  <div class="d-flex justify-content-center mt-3">
-    <%= link_to 'Edit', edit_investment_path(investment), class: "text-muted font-light text-decoration-none mx-2" %> |
-    <%= link_to 'Show', investment, class: "text-muted font-light text-decoration-none mx-2" %>
   </div>
 </div>
 

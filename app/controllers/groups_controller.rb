@@ -4,12 +4,12 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.all.includes(investments: [:user])
   end
 
   # GET /groups/1 or /groups/1.json
   def show
-    @investments = Investment.all.where('user_id = ? AND group_id = ?', current_user.id, @group.id)
+    @investments = Investment.includes(:user).where('user_id = ? AND group_id = ?', current_user.id, @group.id)
   end
 
   # GET /groups/new
